@@ -12,7 +12,8 @@ namespace BethanysPieShopHRM.Components.Pages
     protected override void OnInitialized()
     {
       Employee = MockDataService.Employees.Single(e => e.EmployeeId == EmployeeId);
+      Console.WriteLine($"Employee found: {Employee.FirstName} {Employee.LastName}");
     }
-
   }
+
 }
