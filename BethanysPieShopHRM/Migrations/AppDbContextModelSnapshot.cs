@@ -36,7 +36,7 @@ namespace BethanysPieShopHRM.Migrations
 
                     b.HasKey("CountryId");
 
-                    b.ToTable("Countries");
+                    b.ToTable("Countries", (string)null);
 
                     b.HasData(
                         new
@@ -164,7 +164,7 @@ namespace BethanysPieShopHRM.Migrations
 
                     b.HasIndex("JobCategoryId");
 
-                    b.ToTable("Employees");
+                    b.ToTable("Employees", (string)null);
 
                     b.HasData(
                         new
@@ -205,7 +205,7 @@ namespace BethanysPieShopHRM.Migrations
 
                     b.HasKey("JobCategoryId");
 
-                    b.ToTable("JobCategories");
+                    b.ToTable("JobCategories", (string)null);
 
                     b.HasData(
                         new
@@ -280,7 +280,7 @@ namespace BethanysPieShopHRM.Migrations
 
                     b.HasIndex("EmployeeId");
 
-                    b.ToTable("TimeRegistrations");
+                    b.ToTable("TimeRegistrations", (string)null);
 
                     b.HasData(
                         new
