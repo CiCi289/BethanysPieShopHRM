@@ -1,3 +1,4 @@
+using BethanysPieShopHRM.Client;
 using BethanysPieShopHRM.Components;
 using BethanysPieShopHRM.Contracts.Repositories;
 using BethanysPieShopHRM.Contracts.Services;
@@ -11,7 +12,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
-  .AddInteractiveServerComponents();
+  .AddInteractiveServerComponents()
+  .AddInteractiveWebAssemblyComponents();
 
 //Inject DbContext to set up
 builder.Services.AddDbContextFactory<AppDbContext>(options =>
@@ -34,7 +36,7 @@ builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 
 var app = builder.Build();
-
+//middleware 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -50,8 +52,12 @@ app.UseStaticFiles();
 app.UseAntiforgery();
 
 app.MapRazorComponents<App>()
-  .AddInteractiveServerRenderMode();
+  .AddInteractiveServerRenderMode()
+  .AddInteractiveWebAssemblyRenderMode()
+  .AddAdditionalAssemblies(typeof(BethanysPieShopHRM.Client._Imports).Assembly);
 
+app.MapGet("/api/employee", 
+            async (IEmployeeDataService employeeDataService) => await employeeDataService.GetAllEmployees());
 
 
 
