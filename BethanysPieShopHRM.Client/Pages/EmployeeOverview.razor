@@ -1,5 +1,6 @@
 ﻿@page "/employeeoverview"
 @* @attribute [StreamRendering(true)] *@
+@* @rendermode InteractiveWebAssembly *@
 @rendermode InteractiveWebAssembly
 
 <PageTitle>@Title</PageTitle>
@@ -9,7 +10,7 @@
 {
   <p><em>Loading ...</em></p>
 }
-else
+elseT
 {
   <QuickViewPopup Employee="_selectedEmployee"></QuickViewPopup>
   <div class="row">
