@@ -14,7 +14,7 @@ namespace BethanysPieShopHRM.Client.Pages
     [Inject]
     public IEmployeeDataService? EmployeeDataService { get; set; }
 
-    protected async override Task OnInitializedAsync()
+    protected override async Task OnInitializedAsync()
     {
       Employees = (await EmployeeDataService.GetAllEmployees()).ToList();
     }

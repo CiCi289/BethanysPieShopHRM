@@ -15,10 +15,7 @@ namespace BethanysPieShopHRM.Repositories
     }
 
    
-    public void Dispose()
-    {
-      _appDbContext.Dispose();
-    }
+    
 
     public async Task<IEnumerable<Employee>> GetAllEmployees()
     {
@@ -80,6 +77,11 @@ namespace BethanysPieShopHRM.Repositories
       }
       return;
     }
-    
+
+    public void Dispose()
+    {
+      _appDbContext.Dispose();
+    }
+
   }
 }
