@@ -1,6 +1,7 @@
 ﻿@page "/employeeedit/{EmployeeId:int}"
 @rendermode InteractiveServer
 @using BethanysPieShopHRM.Shared.Domain
+@attribute [Authorize]
 
 @if (!Saved)
 {
