@@ -39,11 +39,13 @@ builder.Services.AddScoped<IJobCategoryRepository, JobCategoryRepository>();
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
+//auth
 builder.Services.AddCascadingAuthenticationState();
 builder.Services.AddScoped<IdentityUserAccessor>();
 builder.Services.AddScoped<IdentityRedirectManager>();
 builder.Services.AddScoped<AuthenticationStateProvider, IdentityRevalidatingAuthenticationStateProvider>();
 
+//bringing in correct auth services for authenticate
 builder.Services.AddAuthentication(options =>
 {
   options.DefaultScheme = IdentityConstants.ApplicationScheme;
@@ -54,8 +56,10 @@ builder.Services.AddAuthentication(options =>
 
 //builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
+
+//add services for identity system
 builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<AppDbContext>()
+    .AddEntityFrameworkStores<AppDbContext>() //which db to store identity info
     .AddSignInManager()
     .AddDefaultTokenProviders();
 

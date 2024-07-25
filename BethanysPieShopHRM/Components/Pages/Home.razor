@@ -1,7 +1,14 @@
 ﻿@page "/"
 
 <h1>Bethany's Pie Shop HRM</h1>
-<h2>Welcome!</h2>
+<AuthorizeView>
+    <Authorized>
+    <h1>Welcome, @context.User.Identity.Name!</h1>
+    </Authorized>
+    <NotAuthorized>
+    <h1>Welcome, Visitor!</h1>
+    </NotAuthorized>
+</AuthorizeView>
 <br />
 
 
