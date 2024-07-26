@@ -1,5 +1,5 @@
 # Project Overview: BethanysPieShopHRM
-NZWalks is my Domain driven C# .NET 8 API + Blazor Practice project, using Repository pattern. 
+BethanysPieShopHRM is my Domain driven C# .NET 8 API + Blazor Practice project, using Repository pattern. 
 This project mainly include C# .NET 8 razor components in various render modes, API, Authentication and Authorization.
 
 ## About BethanysPieShopHRM
@@ -16,4 +16,4 @@ BethanysPieShopHRM aims to work with various tables of data.
 
 ## Contact
 Ci Htin Aung (CiCi289) - cihtinaung289@gmail.com
-Project link: https://github.com/CiCi289/NZWalks
+Project link: https://github.com/CiCi289/BethanysPieShopHRM
